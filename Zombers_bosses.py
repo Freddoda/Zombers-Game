@@ -31,7 +31,7 @@ def setup(bosses,blocks,screen_w,screen_h,screen):
             state=0
             misc_val=[]
         elif bossnum==1:
-            boss_health=200
+            boss_health=2000
             bossX=arenax+screen_w-70-396
             bossY=arenay+70
             state=0
@@ -639,4 +639,5 @@ def fight(bosses,blocks,bullets,zombers,playerX,playerY,centrex,centrey,screen_w
         bosses[n]=bossnum,arenax,arenay,boss_health,bossX,bossY,state,misc_val
     return centrex,centrey,bossmode,playerHP,playerX,playerY
                     
+
         
