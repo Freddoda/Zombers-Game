@@ -2,7 +2,7 @@ import pygame
 import numpy as np
 import Zombers_bosses as boss_code
 
-LEVEL='Test_level.txt'
+LEVEL='Levels/Test_level.txt'
 edit=True
 
 pygame.init()

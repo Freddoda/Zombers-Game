@@ -4,6 +4,7 @@ import random as rand
 import Zombers_bosses as boss_code
 import Zombers_sound as audio
 import time
+import os
 
 #setup
 pygame.init()
@@ -299,14 +300,14 @@ while running:
             pygame.mixer.stop()
             Game_state='Death'
             return_click=False
-            highscorefile=open('Zombers_highscore.txt','r')
+            highscorefile=open(os.path.dirname(os.path.abspath(__file__)) +'/Zombers_highscore.txt','r')
             highscore=int(highscorefile.read())
             if score>highscore:
                 if sound:
                     audio.win1.play()
                     audio.win2.play()
                     audio.win3.play()
-                highscorefile=open('Zombers_highscore.txt','w')
+                highscorefile=open(os.path.dirname(os.path.abspath(__file__)) +'/Zombers_highscore.txt','w')
                 highscorefile.write(str(score))
             elif sound:
                 audio.death1.play()
@@ -529,19 +530,19 @@ while running:
         screen.blit(back_button,(screen_w-back_button.get_width(),0))
 
         #Level buttons
-        Level_click,test_click,LevFile = lev_button("Test",'Test_level.txt',LevFile,Level_click,test_click,0,screen_h-25,25,False)
-        Level_click,lev1_click,LevFile = lev_button("Level 1",'Level_1.txt',LevFile,Level_click,lev1_click,200,150,80)
-        Level_click,lev2_click,LevFile = lev_button("Level 2",'Level_2.txt',LevFile,Level_click,lev2_click,600,150,80)
-        Level_click,lev3_click,LevFile = lev_button("Level 3",'Level_3.txt',LevFile,Level_click,lev3_click,1000,150,80)
-        Level_click,lev4_click,LevFile = lev_button("Level 4",'Level_4.txt',LevFile,Level_click,lev4_click,200,270,80)
-        Level_click,lev5_click,LevFile = lev_button("Level 5",'Level_5.txt',LevFile,Level_click,lev5_click,600,270,80)
-        Level_click,lev6_click,LevFile = lev_button("Level 6",'Level_6.txt',LevFile,Level_click,lev6_click,1000,270,80)
-        Level_click,lev7_click,LevFile = lev_button("Level 7",'Level_7.txt',LevFile,Level_click,lev7_click,200,390,80)
-        Level_click,lev8_click,LevFile = lev_button("Level 8",'Level_8.txt',LevFile,Level_click,lev8_click,600,390,80)
-        Level_click,lev9_click,LevFile = lev_button("Level 9",'Level_9.txt',LevFile,Level_click,lev9_click,1000,390,80)
-        Level_click,lev10_click,LevFile = lev_button("Level 10",'Level_10.txt',LevFile,Level_click,lev10_click,179,510,80)
-        Level_click,lev11_click,LevFile = lev_button("Level 11",'Level_11.txt',LevFile,Level_click,lev11_click,579,510,80)
-        Level_click,lev12_click,LevFile = lev_button("Level 12",'Level_12.txt',LevFile,Level_click,lev12_click,979,510,80)
+        Level_click,test_click,LevFile = lev_button("Test",os.path.dirname(os.path.abspath(__file__)) +'/Test_level.txt',LevFile,Level_click,test_click,0,screen_h-25,25,False)
+        Level_click,lev1_click,LevFile = lev_button("Level 1",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_1.txt',LevFile,Level_click,lev1_click,200,150,80)
+        Level_click,lev2_click,LevFile = lev_button("Level 2",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_2.txt',LevFile,Level_click,lev2_click,600,150,80)
+        Level_click,lev3_click,LevFile = lev_button("Level 3",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_3.txt',LevFile,Level_click,lev3_click,1000,150,80)
+        Level_click,lev4_click,LevFile = lev_button("Level 4",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_4.txt',LevFile,Level_click,lev4_click,200,270,80)
+        Level_click,lev5_click,LevFile = lev_button("Level 5",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_5.txt',LevFile,Level_click,lev5_click,600,270,80)
+        Level_click,lev6_click,LevFile = lev_button("Level 6",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_6.txt',LevFile,Level_click,lev6_click,1000,270,80)
+        Level_click,lev7_click,LevFile = lev_button("Level 7",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_7.txt',LevFile,Level_click,lev7_click,200,390,80)
+        Level_click,lev8_click,LevFile = lev_button("Level 8",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_8.txt',LevFile,Level_click,lev8_click,600,390,80)
+        Level_click,lev9_click,LevFile = lev_button("Level 9",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_9.txt',LevFile,Level_click,lev9_click,1000,390,80)
+        Level_click,lev10_click,LevFile = lev_button("Level 10",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_10.txt',LevFile,Level_click,lev10_click,179,510,80)
+        Level_click,lev11_click,LevFile = lev_button("Level 11",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_11.txt',LevFile,Level_click,lev11_click,579,510,80)
+        Level_click,lev12_click,LevFile = lev_button("Level 12",os.path.dirname(os.path.abspath(__file__)) +'/Levels/Level_12.txt',LevFile,Level_click,lev12_click,979,510,80)
 
         #setup and unpacking
         if Level_click==True:
